@@ -1,0 +1,94 @@
+---------------------------------------------------------------
+			MERGE
+---------------------------------------------------------------
+git checkout head --- perform two commits
+
+a3e54fb4f4a785db36b68798401bf0008205f0a0 MR-File1-Commit2
+0acdacf8dff2f93c53aea4c861ae5a15e835d6f3 MR-File1-Commit1
+
+git checkout branch -- perform two commits 
+
+5620c2ecc3a45db0145fa57d4743855912077e7b BR-File1-Commit2
+bd8c7dcb48bbd4a51f9ef70d9f870db7641528b1 BR-File1-Commit1
+a3e54fb4f4a785db36b68798401bf0008205f0a0 MR-File1-Commit2
+0acdacf8dff2f93c53aea4c861ae5a15e835d6f3 MR-File1-Commit1
+
+git checkout head --- perform two more commits
+a76f71cda276a95c574f2baaee22a9dd6530ec9d MR-File1-Commit4
+af84b985094b216d818ae942d2e0fe5161802640 MR-File1-Commit3
+a3e54fb4f4a785db36b68798401bf0008205f0a0 MR-File1-Commit2
+0acdacf8dff2f93c53aea4c861ae5a15e835d6f3 MR-File1-Commit1
+
+
+git checkout branch -- perform merge
+
+7d716f5e5b9b0ad6acae9030c8b791c5f80444ca MR to BR Merge-Conflict
+a76f71cda276a95c574f2baaee22a9dd6530ec9d MR-File1-Commit4
+af84b985094b216d818ae942d2e0fe5161802640 MR-File1-Commit3
+5620c2ecc3a45db0145fa57d4743855912077e7b BR-File1-Commit2
+bd8c7dcb48bbd4a51f9ef70d9f870db7641528b1 BR-File1-Commit1
+a3e54fb4f4a785db36b68798401bf0008205f0a0 MR-File1-Commit2
+0acdacf8dff2f93c53aea4c861ae5a15e835d6f3 MR-File1-Commit1
+
+Notice that after git merge, the commit hash codes not changed and sequence of commits not changed.
+However, a new commit was added in case of merge conflict.
+
+git checkout master -- perform merge
+
+7d716f5e5b9b0ad6acae9030c8b791c5f80444ca MR to BR Merge-Conflict
+a76f71cda276a95c574f2baaee22a9dd6530ec9d MR-File1-Commit4
+af84b985094b216d818ae942d2e0fe5161802640 MR-File1-Commit3
+5620c2ecc3a45db0145fa57d4743855912077e7b BR-File1-Commit2
+bd8c7dcb48bbd4a51f9ef70d9f870db7641528b1 BR-File1-Commit1
+a3e54fb4f4a785db36b68798401bf0008205f0a0 MR-File1-Commit2
+0acdacf8dff2f93c53aea4c861ae5a15e835d6f3 MR-File1-Commit1
+
+
+-----------------------------------------------------------
+				REBASE
+-----------------------------------------------------------
+git checkout head --- perform two commits
+
+4a65498b04006b843d812d774ef850d8d10c089e MR-File1-Commit2
+f7e99aa4014aeebac3c2e6f6bda0f738d84cb7cd MR-File1-Commit1
+
+git checkout branch --- perform two commits
+
+6aa7c5bca42b3e10003d6a0f4b270cfb445d3c51 BR-File1-Commit2
+284080963d03beb621a39b7d9695573f5c389599 BR-File1-Commit1
+4a65498b04006b843d812d774ef850d8d10c089e MR-File1-Commit2
+f7e99aa4014aeebac3c2e6f6bda0f738d84cb7cd MR-File1-Commit1
+
+
+git checkout head --- perform two more commits
+
+f5edb71c6df3cc96674fa4ed3609de1b42b2165d MR-File1-Commit4
+5aa5d9834f517fc3cc9889f405c725f1afb84825 MR-File1-Commit3
+4a65498b04006b843d812d774ef850d8d10c089e MR-File1-Commit2
+f7e99aa4014aeebac3c2e6f6bda0f738d84cb7cd MR-File1-Commit1
+
+git checkout branch -- perform rebase
+
+d96589dd36af7d803ce653e14052aaca3b0e8cd5 BR-File1-Commit2
+39d54a9c26a155ebe1932a43825c130d1afc029f BR-File1-Commit1
+f5edb71c6df3cc96674fa4ed3609de1b42b2165d MR-File1-Commit4
+5aa5d9834f517fc3cc9889f405c725f1afb84825 MR-File1-Commit3
+4a65498b04006b843d812d774ef850d8d10c089e MR-File1-Commit2
+f7e99aa4014aeebac3c2e6f6bda0f738d84cb7cd MR-File1-Commit1
+
+Notice after rebase, the sequence of commits changed to a meaningful order and the hashcodes changed to indicate that these commits are rewrote.
+Though there was merge conflicts, no additional commit was logged (which is unnecessary as in case of git merge)
+
+
+git checkout master -- perform merge
+
+d96589dd36af7d803ce653e14052aaca3b0e8cd5 BR-File1-Commit2
+39d54a9c26a155ebe1932a43825c130d1afc029f BR-File1-Commit1
+f5edb71c6df3cc96674fa4ed3609de1b42b2165d MR-File1-Commit4
+5aa5d9834f517fc3cc9889f405c725f1afb84825 MR-File1-Commit3
+4a65498b04006b843d812d774ef850d8d10c089e MR-File1-Commit2
+f7e99aa4014aeebac3c2e6f6bda0f738d84cb7cd MR-File1-Commit1
+
+Now the final log history looks same as branch history, clean and easy to understand. However, it is strongly discouraged to perform rebase on public repo/branch as this performs commit rewrites.
+
+			
