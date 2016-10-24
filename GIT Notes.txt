@@ -23,7 +23,10 @@ GIT Log:
 			Eg: git log --pretty=oneline File1.txt
 				or
 			git log File1.txt	
-				While using this 'git log filename' command, if the log history is too long, press 's'. This enable prompt for creating a log file. Enter some name. Hit enter. This creates a log file in the current folder with the given name. To quit this mode press 'q' on 					bash editor 
+				While using this 'git log filename' command, if the log history is too long, press 's'. 
+				This enable prompt for creating a log file. Enter some name. Hit enter. 
+				This creates a log file in the current folder with the given name. 
+				To quit this mode press 'q' on bash editor. 
 
 		git whatchanged --since '04/14/2013' --until '05/22/2014' --oneline --name-only --pretty=format:%an%an | sort | uniq 
 
@@ -32,10 +35,13 @@ GIT Log:
 		git log --since="2 weeks 3 days 2 hours 30 minutes 59 seconds ago"
 
 		For more graphical log history: 
-			git log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)"
+			git log --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) 
+			- %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)
+			%n %C(white)%s%C(reset)"
 
 		For current month
-			git log  --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C	
+			git log  --graph --abbrev-commit --decorate --all --format=format:"%C(bold blue)%h%C(reset) 
+			- %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C
 			(white)%s%C(reset)" --after={'date "+%Y-%m-01"'}			
 
 GIT Show 
@@ -44,7 +50,6 @@ GIT Show
 		Atleast first 4 digits of the Hashcode are necessary to identify the commit.
 
 GIT Stash:
-		
 		git stash list
 		
 		git stash save "<description>"
@@ -56,9 +61,6 @@ GIT Stash:
 		git stash drop stash@{number}
 		
 		git stash clear
-		
-		
-		
 		
 GIT Ignore: 
 	Specify the regex pattern of the files to ignore in .ignore Eg: *.idea
@@ -75,13 +77,45 @@ GIT Alias :
 	For more details refer - http://stackoverflow.com/questions/1250079/how-to-escape-single-quotes-within-single-quoted-strings
 
 GIT Ammend : 
-	Ever commit and then immediately realize you’d forgotten to stage a file? 
-	'commit --amend --no-edit' , quietly tacks any staged files onto the last commit you created, re-using your existing commit message. This works good as long as you haven’t pushed the last commit yet.
-				
+	Ever commit and then immediately realize youâ€™d forgotten to stage a file? 
+	'commit --amend --no-edit' , quietly tacks any staged files onto the last commit you created, 
+	re-using your existing commit message. This works good as long as you havenâ€™t pushed the last commit yet.
 				
 		
 GIT Status:
 
 	GIT Status --short --branch   lists the files in a very neat way than the regular git status command.
 				
-			
+
+GIT Merge : 
+	Merges the incoming branch to this branch.
+		Eg: git merge master
+	Merge by default performs fast-forward. That means, git silently merges incoming branch to this branch. 
+		However, a new commit is possible only incase of merge conflicts.
+	If --no-ff is used, the merge always force a new commit, indicating a merge happend.
+		Eg: git merge --no-ff master
+
+GIT Rebase: 
+	Merges the incoming branch to this branch. However, re-writes all the till now commits of the current branch to move them
+	to the end of the incoming branch.
+	Eg: git rebase master
+
+GIT Reset:
+	Moves the pointer of the current branch to the said commit. This is useful if we want to undo commits.
+	Eg: Say the current brach has log history as follows:
+		22a50bad272321f1c97d6c7b822f98685e8f6163 File1 - Commit3 - MR
+		162e93ab37661687695b39cb1bd7bb83aa9aad0e File1 - Commit2 - MR
+		69edb9db46bc2741f1707248e5e591f4c02a4084 File1 - Commit1 - MR
+
+		After a new commit, it looks like this.
+		4e81615206d933e5418596c2a671bc2cc6e6b3af File1 - Commit4 - MR
+		22a50bad272321f1c97d6c7b822f98685e8f6163 File1 - Commit3 - MR
+		162e93ab37661687695b39cb1bd7bb83aa9aad0e File1 - Commit2 - MR
+		69edb9db46bc2741f1707248e5e591f4c02a4084 File1 - Commit1 - MR
+		
+		Now if we dont need the commit4, perform the below command
+		>git reset 22a50bad2
+		This sets the current branch pointer to Commit3. Notice, at least the first 4 alpha-numeric of the hascode 
+		is necessary to identify the desired commit. 
+		This command is very helpful to set the current branch to any desired previous commit.
+		
