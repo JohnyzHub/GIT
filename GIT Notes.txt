@@ -126,3 +126,16 @@ GIT Reset:
 		is necessary to identify the desired commit. 
 		This command is very helpful to set the current branch to any desired previous commit.
 		
+GIT Merge Conflicts:
+	In case merge conflicts, the merge status would show up like this,
+		$ git merge master     
+  		Auto-merged _layouts/default.html
+  		CONFLICT (content): Merge conflict in _layouts/default.html
+		Auto-merged index.html
+  		CONFLICT (content): Merge conflict in index.html
+  		Automatic merge failed; fix conflicts and then commit the result.
+		
+		To retain our changes, use -->  git checkout --ours index.html
+		To pull their changes, use -->  git checkout --theirs _layouts/default.html
+		
+		
