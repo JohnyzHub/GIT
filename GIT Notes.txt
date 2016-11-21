@@ -10,6 +10,9 @@ GIT Config :
 			Eg: git config commit.template c:\GITPractise\GITFolder\gittemplate.gitmessage
 			OR
 			git config commit.template c:\CommitEditor.txt
+			
+		to locate .gitconfig file:
+			git config --list --show-origin
 
 
 GIT Init:
