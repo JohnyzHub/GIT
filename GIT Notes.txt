@@ -72,6 +72,11 @@ GIT Stash:
 		
 		git stash clear
 		
+		git stash pop stash@{number}
+		
+		git stash pop    --->  equals to git stash pop stash@{0}
+		
+		
 GIT Ignore: 
 	Specify the regex pattern of the files to ignore in .ignore Eg: *.idea
 	Alternatively you can add regex pattern of the file to the 'exclude' file uder .git/info folder.		
