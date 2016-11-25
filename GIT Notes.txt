@@ -32,10 +32,11 @@ GIT Branch
 		git push -u origin <new_branch> -- Pushes this new branch to the remote repository and starts tracking it.
 		
 		Renaming current branch:
-			$ git branch new-branch-name origin/old-branch-name
-			$ git push origin --set-upstream new-branch-name
-			$ git push origin :old-branch-name
-				(Do not forget to switch to new branch after deleting old branch)
+			$ git branch new-branch-name origin/old-branch-name  (Creates a new branch with desired name from old branch)
+			$ git push origin --set-upstream new-branch-name     (Adds this new branch to the remote repo and starts
+										tracking it)
+			$ git push origin :old-branch-name                   (Deletes the old branch)
+								(Do not forget to switch to new branch after deleting old branch)
 		
 		
 
