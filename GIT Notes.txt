@@ -148,7 +148,7 @@ GIT Reset:
 		This command is very helpful to set the current branch to any desired previous commit.
 		
 GIT Merge Conflicts:
-	In case merge conflicts, the merge status would show up like this,
+	In case merge conflicts happend, for say 2 files, the merge status would show up like this,
 		$ git merge master     
   		Auto-merged _layouts/default.html
   		CONFLICT (content): Merge conflict in _layouts/default.html
