@@ -14,3 +14,7 @@ GIT Cheat Sheets
         --------------------------------------
         git remote add origin https://github.com/johnyshaik82/GITCheatSheets.git
         git push -u origin master
+
+
+Few cool tips are here:
+https://gist.github.com/hofmannsven/6814451
