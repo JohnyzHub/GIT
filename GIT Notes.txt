@@ -175,6 +175,6 @@ GIT Cherry-Pick:
 						git cherry-pick 62ecb3
 		That’s all. 62ecb3 is now applied to the master branch and commited (as a new commit) in master.
 
-		dd2e86 - 946992 - 9143a9 - a6fd86 - 5a6057 - 62ecb3 [master]
-			   \
-			    76cada - 62ecb3 - b886a0 [feature]
+			dd2e86 - 946992 - 9143a9 - a6fd86 - 5a6057 - 62ecb3 [master]
+				   \
+				    76cada - 62ecb3 - b886a0 [feature]
