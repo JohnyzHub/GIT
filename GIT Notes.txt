@@ -161,4 +161,20 @@ GIT Merge Conflicts:
 		To retain our changes, use -->  git checkout --ours index.html
 		To pull their changes, use -->  git checkout --theirs _layouts/default.html
 		
-		
+
+GIT Cherry-Pick:
+		An example:
+
+			dd2e86 - 946992 - 9143a9 - a6fd86 - 5a6057 [master]
+				   \
+				    76cada - 62ecb3 - b886a0 [feature]
+				    
+		Let’s say you’ve written some code in commit 62ecb3 of the feature branch that is very important right now in master.
+		In this case, 62ecb3 is the cherry and you want to pick it!
+						git checkout master
+						git cherry-pick 62ecb3
+		That’s all. 62ecb3 is now applied to the master branch and commited (as a new commit) in master.
+
+		dd2e86 - 946992 - 9143a9 - a6fd86 - 5a6057 - 62ecb3 [master]
+			   \
+			    76cada - 62ecb3 - b886a0 [feature]
