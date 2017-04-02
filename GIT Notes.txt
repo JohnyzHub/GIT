@@ -93,8 +93,13 @@ GIT Stash:
 		
 		
 GIT Ignore: 
-	Specify the regex pattern of the files to ignore in .ignore Eg: *.idea
-	Alternatively you can add regex pattern of the file to the 'exclude' file uder .git/info folder.		
+	Specify the regex pattern of the files to ignore in .ignore 
+			Ignore files	Eg: *.idea
+				    	    *.settings
+			Ignore folders, subfolders  Eg: target
+			                                target/*     
+				 
+	Alternatively you can add regex pattern of the file to the 'exclude' file uder .git/info folder of specific project	
 		
 
 GIT Alias : 
