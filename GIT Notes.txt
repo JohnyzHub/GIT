@@ -99,7 +99,15 @@ GIT Ignore:
 			Ignore folders, subfolders  Eg: target
 			                                target/*     
 				 
-	Alternatively you can add regex pattern of the file to the 'exclude' file uder .git/info folder of specific project	
+	Alternatively you can add regex pattern of the file to 
+	           1) LOCAL: the 'exclude' file uder .git/info folder of specific project
+		   		   
+		   2) GLOBAL: 
+		   	a) set global file
+				git config --global core.excludesfile C:\.gitignore 
+			   assuming .gitignore file is placed under c: drive
+			   and
+			b) specify the regex patterns inside the .gitignore file.
 		
 
 GIT Alias : 
