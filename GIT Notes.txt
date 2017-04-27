@@ -71,7 +71,8 @@ GIT Log:
 
 GIT Show 
 		Showing the changes of a perticular commit if you know the commit hascode.
-		git show <hashcode>			
+		git show <hashcode>	-- This shows the files with code changes
+		git show --name-only <hashcode> - This shows only the names of the files.
 		Atleast first 4 digits of the Hashcode are necessary to identify the commit.
 
 GIT Stash:
