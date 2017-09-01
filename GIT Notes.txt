@@ -80,18 +80,22 @@ GIT Stash:
 		
 		git stash save "<description>"
 		
-		git stash apply stash@{number}
+		git stash apply stash@{number} --  Apply the stash changes and keeps the stash in memory.
 		
 		git stash show stash@{number}   Eg : git stash show stash@{0}
 		
-		git stash drop stash@{number}
+		git stash drop stash@{number} --  Removes the stash memory.
 		
-		git stash clear
+		git stash clear -- Removes all the stashes from the memroy.
 		
-		git stash pop stash@{number}
+		git stash pop stash@{number} -- Apply the stash changes and removes the stash from memory.
 		
 		git stash pop    --->  equals to git stash pop stash@{0}
 		
+		git stash push -m <name of stash> <path/filename> -- Creates stash for the specified file.
+				This is useful to pick the selected file from the list of modified files.
+				Eg: git stash push -m my_changes src/selection/MemoryDefinitions.java
+					
 		
 GIT Ignore: 
 	Specify the regex pattern of the files to ignore in .ignore 
