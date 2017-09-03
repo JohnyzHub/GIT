@@ -122,7 +122,8 @@ GIT Alias :
 	To remove alias, use --unset  Eg: git config --global --unset alias.<aliasname>
 	
 	Imp Note: To use apostrophe(') in the alias command, use '"'"'
-	For more details refer - http://stackoverflow.com/questions/1250079/how-to-escape-single-quotes-within-single-quoted-strings
+	For more details refer - 
+		http://stackoverflow.com/questions/1250079/how-to-escape-single-quotes-within-single-quoted-strings
 
 GIT Ammend : 
 	Ever commit and then immediately realize you’d forgotten to stage a file? 
@@ -144,8 +145,8 @@ GIT Merge :
 		Eg: git merge --no-ff master
 
 GIT Rebase: 
-	Merges the incoming branch to this branch. However, re-writes all the till now commits of the current branch to move them
-	to the end of the incoming branch.
+	Merges the incoming branch to this branch. However, re-writes all the till now commits of the current branch 
+		to move them to the end of the incoming branch.
 	Eg: git rebase master
 
 GIT Reset:
@@ -187,7 +188,8 @@ GIT Cherry-Pick:
 				   \
 				    76cada - 62ecb3 - b886a0 [feature]
 				    
-		Let’s say you’ve written some code in commit 62ecb3 of the feature branch that is very important right now in master.
+		Let’s say you’ve written some code in commit 62ecb3 of the feature branch 
+		   that is very important right now in master.
 		In this case, 62ecb3 is the cherry and you want to pick it!
 						git checkout master
 						git cherry-pick 62ecb3
