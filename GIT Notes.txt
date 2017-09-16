@@ -20,10 +20,15 @@ GIT Init:
 		git init && git commit -m "root" --allow-empty
 			
 
-GIT Remote:    git remote add <name> <remote path>  -- If local repo and the remote repo are same but are not linked, 
-	       						this command links the remote repo to the current repo.
-							Eg: git remote add origin <git repo>
-		git branch --set-upstream-to=origin/master master : local master branch tracks remote master branch as an upstream.
+GIT Remote:    git remote add <name> <remote path>  
+				-- If local repo and the remote repo are same but are not linked, 
+	       				this command links the remote repo to the current repo.
+					Eg: git remote add origin <git repo>
+							    
+		git branch --set-upstream-to=origin/master master 
+				-- local master branch tracks remote master branch as an upstream.
+		                        If the local repo is new and doesn't have any branch yet, 
+					do git fetch && git checkout master is enough to set upstream tracking.
 		git clone <remote path>	 -- 	Clones the remote repo in the local drive.
    		git push		 --	Pushes the changes from local repo to linked remote repo
 		git pull		 --	Pulls and merges the changes from linked remote repo to the local repo. 
