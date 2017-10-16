@@ -18,3 +18,4 @@ GIT Cheat Sheets
 
 Few cool tips are here:
 https://gist.github.com/hofmannsven/6814451
+https://chris.beams.io/posts/git-commit/
