@@ -45,10 +45,10 @@ GIT Branch
 			$ git push origin :old-branch-name                   (Deletes the old branch)
 								(Do not forget to switch to new branch after deleting old branch)
 		Delete Branch:
-			From local: git branch -d branch_name
-			From central: git push origin --delete branch_name
-			
-		
+			From local: git branch -D branch_name
+			From central: git push <remote_name> --delete <branch_name>
+						Eg: git push origin --delete branch_name
+					
 
 GIT Log:			
 			
