@@ -102,6 +102,7 @@ GIT Stash:
 		
 		git stash push -m <name of stash> <path/filename> -- Creates stash for the specified file.
 				This is useful to pick the selected file from the list of modified files.
+				Please remember that it works only for single file stash.
 				Eg: git stash push -m my_changes src/selection/MemoryDefinitions.java
 					
 		
