@@ -207,3 +207,12 @@ GIT Cherry-Pick:
 			dd2e86 - 946992 - 9143a9 - a6fd86 - 5a6057 - 62ecb3 [master]
 				   \
 				    76cada - 62ecb3 - b886a0 [feature]
+				    
+GIT Build specific Modules:
+	mvn clean install -pl sub-module-name2,sub-module-name3
+	
+	# Build dependencies (also make)
+		mvn clean install –pl sub-module-name2 –am
+
+	# Build dependents (also make dependents)
+		mvn clean install -pl sub-module-name2 –amd
