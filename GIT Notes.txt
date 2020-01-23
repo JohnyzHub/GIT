@@ -92,6 +92,8 @@ GIT Stash:
 		
 		git stash show stash@{number}   Eg : git stash show stash@{0}
 		
+		git stash show -p stash@{number}   Eg : git stash show -p stash@{0} previews the content.
+		
 		git stash drop stash@{number} --  Removes the stash memory.
 		
 		git stash clear -- Removes all the stashes from the memroy.
