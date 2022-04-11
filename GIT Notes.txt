@@ -14,6 +14,7 @@ GIT Config :
 		to locate .gitconfig file:
 			git config --list --show-origin
 
+                git config --global help.autocorrect 50  >> 5 seconds
 
 GIT Init:
 		Instead of just initializing a new git repository, it would be a good practice to add a empty root commit
